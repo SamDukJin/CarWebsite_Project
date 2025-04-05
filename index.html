@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Car Dealer Website</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <div class="title-container">
+          <h2 id="title">Car Dealer Website</h2>
+          <nav id="navigator">
+               <li></li>
+          </nav>
+     </div>
+     <div class="container">
+        <h2 id="choose-label">Customization</h2>
+          <!-- Dropdown menus (side by side) -->
+          <div class="dropdown-row">
+               <div class="dropdown-group">
+                    <label for="CarModel">Car Model:</label>
+                    <select id="CarModel">
+                         <option value="">-- Select Car Model --</option>
+                         <option value="SEDAN">SEDAN</option>
+                         <option value="CUV">CUV</option>
+                         <option value="SUV">SUV</option>
+                         <option value="SUPERCAR">SUPERCAR</option>
+                    </select>
+               </div>
+
+               <div class="dropdown-group">
+                    <label for="CarColor">Car Color:</label>
+                    <select id="CarColor">
+                         <option value="">-- Select Car Color --</option>
+                         <option value="Black">Black</option>
+                         <option value="White">White</option>
+                         <option value="Red">Red</option>
+                         <option value="Blue">Blue</option>
+                         <option value="Silver">Silver</option>
+                    </select>
+               </div>
+
+               <div class="dropdown-group">
+                    <label for="TireType">Tire Type:</label>
+                    <select id="TireType">
+                         <option value="">-- Select Tire Type --</option>
+                         <option value="All-Season">All-Season</option>
+                         <option value="Winter">Winter</option>
+                         <option value="Performance">Performance</option>
+                         <option value="Off-Road">Off-Road</option>
+                    </select>
+               </div>
+          </div>
+
+          <div id="carImage"></div>
+          <h4 id="carLabel">Displaying:</h4>
+     </div>
+     <!-- Overview Panel -->
+     <div class="overview-container">
+          <h2 id="overview-label">Overview</h2>
+          <p class="overview" id="car_type">Car Type: </p>
+          <p class="overview" id="color_type">Color: </p>
+          <p class="overview" id="tire_type">Tire Type: </p>
+          <br>
+
+          <p class="overview" id="percentages">Percentage: </p>
+          <p class="overview" id="price">Price: </p>
+     </div>
+     <!-- Move the script tag here -->
+     <script src="script.js"></script>
+</body>
+
+</html>
