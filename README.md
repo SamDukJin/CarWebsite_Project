@@ -46,6 +46,7 @@ A modern, interactive web application for customizing, previewing, and purchasin
 - Vanilla JavaScript
 - [jsPDF](https://github.com/parallax/jsPDF) for PDF generation
 
+---
 
 ## Author
 
