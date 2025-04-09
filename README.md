@@ -1,11 +1,12 @@
-# Car Customization & Purchase Website
+# 🚗 Car Customization & Purchase Website
 
 A modern, interactive web application for customizing, previewing, and purchasing different types of cars — featuring dynamic pricing, image preview, and PDF invoice generation.
+
+---
 
 ## 📑 Table of Contents
 
 - [✨ Features](#-features)
-- [📁 Project Structure](#-project-structure)
 - [📊 Price List](#-price-list)
   - [🎨 Color Costs](#-color-costs)
   - [🛞 Tire Costs](#-tire-costs)
@@ -14,37 +15,39 @@ A modern, interactive web application for customizing, previewing, and purchasin
 - [📚 Technologies Used](#-technologies-used)
 - [💡 Future Ideas](#-future-ideas)
 - [🧑‍💻 Author](#-author)
+
 ---
 
-## Features
+## ✨ Features
 
-- **Car Selection**: Choose from 4 different car types:
+- 🔧 **Car Selection**: Choose from 4 different car types:
   - **CUV**
   - **SUV**
   - **Sedan**
   - **Supercar**
   
-- **Customization Options**:
+- 🎨 **Customization Options**:
   - Select **color** and **tire type**
   - Live preview updates the car image instantly
   - Pricing adjusts automatically based on options
 
-- **Dynamic Pricing System**:
+- 💸 **Dynamic Pricing System**:
   - Base price varies by car model
   - Color & tire upgrades add to the total
   - Real-time total price calculation
 
-- **Flexible Payment Options**:
+- 💰 **Flexible Payment Options**:
   - **One-Time Payment**: Full price upfront
   - **Installments**: Includes 25% down payment, annual interest (3.5%), and monthly payment breakdown based on selected term (1–5 years)
 
-- **PDF Generation**:
+- 📄 **PDF Generation**:
   - On clicking **"Purchase"**, a fully formatted **PDF invoice** is downloaded with selected options and payment details
 
 ---
-## Price List
 
-### Color Costs
+## 📊 Price List
+
+### 🎨 Color Costs
 | Color     | Additional Cost |
 |-----------|------------------|
 | White     | 0 Baht           |
@@ -53,7 +56,7 @@ A modern, interactive web application for customizing, previewing, and purchasin
 | Silver    | 10,000 Baht      |
 | Blue      | 10,000 Baht      |
 
-### Tire Costs
+### 🛞 Tire Costs
 | Tire Type     | Additional Cost |
 |---------------|------------------|
 | All-Season    | 0 Baht           |
@@ -63,7 +66,7 @@ A modern, interactive web application for customizing, previewing, and purchasin
 
 ---
 
-## Base Car Prices
+## 📐 Base Car Prices
 
 | Car Model | Base Price (Baht) |
 |-----------|-------------------|
@@ -74,7 +77,7 @@ A modern, interactive web application for customizing, previewing, and purchasin
 
 ---
 
-## How to Use
+## 📦 How to Use
 
 1. **Open `index.html`** and select a car model.
 2. Choose your preferred **color** and **tire type**.
@@ -84,7 +87,7 @@ A modern, interactive web application for customizing, previewing, and purchasin
 
 ---
 
-## Technologies Used
+## 📚 Technologies Used
 
 - HTML5 + CSS3
 - Vanilla JavaScript
@@ -92,7 +95,7 @@ A modern, interactive web application for customizing, previewing, and purchasin
 
 ---
 
-## Future Ideas
+## 💡 Future Ideas
 
 - ✅ Add login & user history  
 - 🖼️ Include preview images in PDF  
@@ -101,6 +104,8 @@ A modern, interactive web application for customizing, previewing, and purchasin
 
 ---
 
-## Author
+## 🧑‍💻 Author
 
-Thanaphat Ch. 
+Made By Thanaphat Ch.
+
+---
