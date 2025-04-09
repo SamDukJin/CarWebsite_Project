@@ -22,11 +22,11 @@ A modern, interactive web application for customizing, previewing, and purchasin
   - Color & tire upgrades add to the total
   - Real-time total price calculation
 
-- 💰 **Flexible Payment Options**:
+- **Flexible Payment Options**:
   - **One-Time Payment**: Full price upfront
   - **Installments**: Includes 25% down payment, annual interest (3.5%), and monthly payment breakdown based on selected term (1–5 years)
 
-- 📄 **PDF Generation**:
+- **PDF Generation**:
   - On clicking **"Purchase"**, a fully formatted **PDF invoice** is downloaded with selected options and payment details
 
 ---
