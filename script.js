@@ -1,43 +1,40 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const selectCar = document.getElementById('CarModel');
-    const selectColor = document.getElementById('CarColor');
-    const selectTire = document.getElementById('TireType');
+    const carCards = document.querySelectorAll('.car-card');
+    const titleContainer = document.querySelector('.title-container');
 
-    const carLabel = document.getElementById('carLabel');
-    const carImageDiv = document.getElementById('carImage');
+    carCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const model = card.dataset.model.toLowerCase(); 
+            window.location.href = `subModelPages/${model}.html`; // Redirect to submodel page
+        });
+    });
 
-    const carTypeOverview = document.getElementById('car_type');
-    const colorTypeOverview = document.getElementById('color_type');
-    const tireTypeOverview = document.getElementById('tire_type');
+    const navAbout = document.getElementById('nav-about');
+    const navDiscovery = document.getElementById('nav-discovery');
+    const discoverySection = document.getElementById('discovery-section');
+    const aboutSection = document.getElementById('about-section');
 
-    selectCar.addEventListener('change', () => {
-        const carType = selectCar.value.trim().toUpperCase();
+    if (navAbout && navDiscovery) {
+        navAbout.addEventListener('click', () => {
+            aboutSection.scrollIntoView({
+                behavior: 'smooth',  // Smooth scroll effect
+                block: 'start'      // Scroll to the top of the section
+            });
+        });
 
-        if (carType === "") {
-            carLabel.textContent = "Choose a car model:";
-            carImageDiv.style.display = "none";
-            carTypeOverview.textContent = "Car Type: ";
-            return;
+        navDiscovery.addEventListener('click', () => {
+            window.scrollTo({
+                top:discoverySection.offsetTop - titleContainer.offsetHeight,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    window.addEventListener('scroll', ()=>{
+        if (window.scrollY > titleContainer.offsetHeight){
+            titleContainer.classList.add('fixed');
+        } else {
+            titleContainer.classList.remove('fixed');
         }
-
-        const newSrc = `CarModel/CarModel_${carType}.png`; 
-
-        console.log("Car Image Path:", newSrc);
-
-        carLabel.textContent = `Displaying: ${carType}`;
-        carImageDiv.style.backgroundImage = `url(${newSrc})`;
-        carImageDiv.style.display = "block";
-
-        carTypeOverview.textContent = `Car Type: ${carType}`;
-    });
-
-    selectColor.addEventListener('change', () => {
-        const color = selectColor.value.trim();
-        colorTypeOverview.textContent = color ? `Color: ${color}` : "Color: ";
-    });
-
-    selectTire.addEventListener('change', () => {
-        const tire = selectTire.value.trim();
-        tireTypeOverview.textContent = tire ? `Tire Type: ${tire}` : "Tire Type: ";
-    });
+    })
 });

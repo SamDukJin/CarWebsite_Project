@@ -1,73 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Car Dealer Website</title>
-     <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Dealer Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <div class="title-container">
-          <h2 id="title">Car Dealer Website</h2>
-          <nav id="navigator">
-               <li></li>
-          </nav>
-     </div>
-     <div class="container">
-        <h2 id="choose-label">Customization</h2>
-          <!-- Dropdown menus (side by side) -->
-          <div class="dropdown-row">
-               <div class="dropdown-group">
-                    <label for="CarModel">Car Model:</label>
-                    <select id="CarModel">
-                         <option value="">-- Select Car Model --</option>
-                         <option value="SEDAN">SEDAN</option>
-                         <option value="CUV">CUV</option>
-                         <option value="SUV">SUV</option>
-                         <option value="SUPERCAR">SUPERCAR</option>
-                    </select>
-               </div>
+    <div class="title-container">
+        <h2 id="title">Car Dealer Website</h2>
+        <nav id="navigator">
+            <ul>
+                    <li id="nav-discovery">Discovery and More</li>
+                    <li id="nav-about">About</li>
+            </ul>
+        </nav>
+    </div>
 
-               <div class="dropdown-group">
-                    <label for="CarColor">Car Color:</label>
-                    <select id="CarColor">
-                         <option value="">-- Select Car Color --</option>
-                         <option value="Black">Black</option>
-                         <option value="White">White</option>
-                         <option value="Red">Red</option>
-                         <option value="Blue">Blue</option>
-                         <option value="Silver">Silver</option>
-                    </select>
-               </div>
+    <!-- Discovery Section -->
+    <div class="container fade show" id="discovery-section">
+        <h2 id="choose-label">Choose Your Car</h2>
 
-               <div class="dropdown-group">
-                    <label for="TireType">Tire Type:</label>
-                    <select id="TireType">
-                         <option value="">-- Select Tire Type --</option>
-                         <option value="All-Season">All-Season</option>
-                         <option value="Winter">Winter</option>
-                         <option value="Performance">Performance</option>
-                         <option value="Off-Road">Off-Road</option>
-                    </select>
-               </div>
-          </div>
+        <div class="car-card-grid">
+            <div class="car-card" data-model="SEDAN" data-price="700000">
+                <img src="CarModel/CarModel_SEDAN.png" alt="Sedan">
+                <div class="car-info">
+                    <h3>Sedan</h3>
+                    <p>Base Price: 700,000 Baht</p>
+                </div>
+            </div>
+            <div class="car-card" data-model="SUV" data-price="500000">
+                <img src="CarModel/CarModel_SUV.png" alt="SUV">
+                <div class="car-info">
+                    <h3>SUV</h3>
+                    <p>Base Price: 500,000 Baht</p>
+                </div>
+            </div>
+            <div class="car-card" data-model="CUV" data-price="600000">
+                <img src="CarModel/CarModel_CUV.png" alt="CUV">
+                <div class="car-info">
+                    <h3>CUV</h3>
+                    <p>Base Price: 600,000 Baht</p>
+                </div>
+            </div>
+            <div class="car-card" data-model="SUPERCAR" data-price="1000000">
+                <img src="CarModel/CarModel_SUPERCAR.png" alt="Supercar">
+                <div class="car-info">
+                    <h3>Supercar</h3>
+                    <p>Base Price: 1,000,000 Baht</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-          <div id="carImage"></div>
-          <h4 id="carLabel">Displaying:</h4>
-     </div>
-     <!-- Overview Panel -->
-     <div class="overview-container">
-          <h2 id="overview-label">Overview</h2>
-          <p class="overview" id="car_type">Car Type: </p>
-          <p class="overview" id="color_type">Color: </p>
-          <p class="overview" id="tire_type">Tire Type: </p>
-          <br>
+    <!-- About Section -->
+    <div class="container fade" id="about-section">
+        <h2 id="about-title">About Us</h2>
+        <p id="about-paragraph">
+            Welcome to our Car Dealer Website! Here, you can explore a wide variety of vehicles including sedans, SUVs, supercars, and more. Customize your dream ride with various colors, tire types, and packages.
+            <br><br>
+            This website is designed to help you easily browse and personalize cars before purchase or rent. It’s intuitive, interactive, and tailored to enhance your experience in finding the perfect vehicle.
+        </p>
+    </div>
 
-          <p class="overview" id="percentages">Percentage: </p>
-          <p class="overview" id="price">Price: </p>
-     </div>
-     <!-- Move the script tag here -->
-     <script src="script.js"></script>
+    <!-- Removed Overview Panel (handled in subpages) -->
+    <!-- <div class="overview-container"> ... </div> -->
+
+    <script src="script.js"></script>
 </body>
-
 </html>

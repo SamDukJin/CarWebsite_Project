@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Sedan Customization</title>
+     <link rel="stylesheet" href="substyle.css">
+</head>
+<body>
+     <div class="page-header">
+          <h1>Sedan Customization</h1>
+          <a href="../index.html" class="back-button">← Back to Home</a>
+     </div>
+
+     <div class="car-display">
+          <img id="carImage" src="CarModel/CarModel_SEDAN_Default.png" alt="Sedan">
+          <p class="base-price">Base Price: 700,000 Baht</p>
+     </div>
+
+     <div class="customization-options">
+          <div class="option-group">
+               <label for="CarColor">Choose Color:</label>
+               <select id="CarColor">
+                    <option value="">-- Select Car Color --</option>
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Silver">Silver</option>
+               </select>
+          </div>
+
+          <div class="option-group">
+               <label for="TireType">Choose Tire Type:</label>
+               <select id="TireType">
+                    <option value="">-- Select Tire Type --</option>
+                    <option value="All-Season">All-Season</option>
+                    <option value="Winter">Winter</option>
+                    <option value="Performance">Performance</option>
+                    <option value="Off-Road">Off-Road</option>
+               </select>
+          </div>
+     </div>
+
+     <div class="overview">
+          <h3>Your Selection:</h3>
+          <p id="selected-color">Color: -</p>
+          <p id="selected-tire">Tire Type: -</p>
+          <p id="total-price">Total Price: -</p>
+          <p>
+               <label for="payment-method">Payment Method:</label>
+               <select id="payment-method">
+                    <option value="">-- Select Payment Method --</option>
+                    <option value="onetime">One-Time Payment</option>
+                    <option value="installment">Monthly Installment</option>
+               </select>
+          </p>
+          
+          <div id="installment-options" style="display: none;">
+               <label for="installment-years">Select Payment Duration:</label>
+               <select id="installment-years">
+                    <option value="1">1 Year</option>
+                    <option value="2">2 Years</option>
+                    <option value="3">3 Years</option>
+                    <option value="4">4 Years</option>
+                    <option value="5">5 Years</option>
+               </select>
+          </div>
+          
+          <!-- Show breakdown -->
+          <div id="payment-breakdown">
+               <p id="down-payment">Down Payment: -</p>
+               <p id="balance-payment">Balance (after down payment): -</p>
+               <p id="total-interest">Total Interest: -</p>
+               <p id="final-payment">Final Balance Payment: -</p>
+               <p id="monthly-payment">Monthly Payment: -</p>
+          </div>
+          <button id="purchase-btn">Purchase</button>
+          <h3 id="error-handle"></h3>
+     </div>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+     <script>
+          var currentCarModel = "SEDAN";
+     </script>
+     <script src="script.js"></script>
+</body>
+</html>
