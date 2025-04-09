@@ -6,10 +6,10 @@ A modern, interactive web application for customizing, previewing, and purchasin
 
 ## Table of Contents
 
-- [Features](#-features)
-- [Base Car Prices](#-base-car-prices)
-- [Tech Uses](#-technologies-used)
-- [Contributor](#-author)
+- [Features](#features)
+- [Base Car Prices](#base-car-prices)
+- [Tech Uses](#tech-uses)
+- [Author](#author)
 
 ---
 
@@ -37,6 +37,17 @@ A modern, interactive web application for customizing, previewing, and purchasin
 
 - **PDF Generation**:
   - On clicking **"Purchase"**, a fully formatted **PDF invoice** is downloaded with selected options and payment details
+
+---
+
+## Base Car Prices
+
+| Car Model | Base Price (Baht) |
+|-----------|-------------------|
+| CUV       | 600,000           |
+| SUV       | 500,000           |
+| Sedan     | 700,000           |
+| Supercar  | 1,000,000         |
 
 ---
 
