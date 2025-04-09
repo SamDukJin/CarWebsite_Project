@@ -2,6 +2,18 @@
 
 A modern, interactive web application for customizing, previewing, and purchasing different types of cars — featuring dynamic pricing, image preview, and PDF invoice generation.
 
+## 📑 Table of Contents
+
+- [✨ Features](#-features)
+- [📁 Project Structure](#-project-structure)
+- [📊 Price List](#-price-list)
+  - [🎨 Color Costs](#-color-costs)
+  - [🛞 Tire Costs](#-tire-costs)
+- [📐 Base Car Prices](#-base-car-prices)
+- [📦 How to Use](#-how-to-use)
+- [📚 Technologies Used](#-technologies-used)
+- [💡 Future Ideas](#-future-ideas)
+- [🧑‍💻 Author](#-author)
 ---
 
 ## Features
