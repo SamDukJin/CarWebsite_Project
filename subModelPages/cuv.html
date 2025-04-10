@@ -22,26 +22,25 @@
                <label for="CarColor">Choose Color:</label>
                <select id="CarColor">
                     <option value="">-- Select Car Color --</option>
-                    <option value="Black">Black</option>
-                    <option value="White">White</option>
-                    <option value="Red">Red</option>
-                    <option value="Blue">Blue</option>
-                    <option value="Silver">Silver</option>
-                </select>     
+                    <option value="Black">Black +0 Baht</option>
+                    <option value="White">White +0 Baht</option>
+                    <option value="Red">Red +0 Baht</option>
+                    <option value="Blue">Blue +10,000 Baht</option>
+                    <option value="Silver">Silver + 50,000 Baht</option>
+               </select>
           </div>
 
           <div class="option-group">
                <label for="TireType">Choose Tire Type:</label>
                <select id="TireType">
                     <option value="">-- Select Tire Type --</option>
-                    <option value="All-Season">All-Season</option>
-                    <option value="Winter">Winter</option>
-                    <option value="Performance">Performance</option>
-                    <option value="Off-Road">Off-Road</option>
+                    <option value="All-Season">All-Season +5,000 Baht</option>
+                    <option value="Winter">Winter  +20,000 Baht</option>
+                    <option value="Performance">Performance  +10,000 Baht</option>
+                    <option value="Off-Road">Off-Road  +40,000 Baht</option>
                </select>
           </div>
      </div>
-
      <div class="overview">
           <h3>Your Selection:</h3>
           <p id="selected-color">Color: -</p>
@@ -77,6 +76,19 @@
           </div>
           <button id="purchase-btn">Purchase</button>
           <h3 id="error-handle"></h3>
+     </div>
+
+     <div class="car-overview">
+          <h3>Car Overview</h3>
+          <p id="horsepower">Horse Power: -</p>
+          <p id="weight">Weight: -</p>
+          <p id="top-speed">Top Speed: -</p>
+          <p id="acceleration">Acceleration: -</p>
+          <p id="fuel-efficiency">Fuel Efficiency: -</p>
+          <p id="engine-type">Engine Type: -</p>
+          <p id="drivetrain">Drivetrain: -</p>
+          <p id="transmission">Transmission: -</p>
+          <p id="seating">Seating Capacity: -</p>
      </div>
 
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>

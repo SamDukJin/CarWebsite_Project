@@ -123,6 +123,42 @@ body {
      position: absolute;
      left: 0;
 }
+.car-overview {
+     position:absolute;
+     top:129px;
+     right:100px;
+     background-color: #ffffff;
+     width: 400px;
+     height:auto;
+     padding: 20px;
+     border: 1px solid #e0e0e0;
+     margin: 0 auto;
+     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+     border-radius: 10px;
+}
+
+.car-overview h3 {
+     font-size: 22px;
+     color: #c3002f;
+     margin-bottom: 15px;
+     text-align: center;
+}
+
+.car-overview p {
+     font-size: 18px;
+     margin-bottom: 10px;
+     padding-left: 10px;
+     position: relative;
+}
+
+.car-overview p::before {
+     content: "•";
+     color: #c3002f;
+     font-weight: bold;
+     position: absolute;
+     left: 0;
+}
+
 #purchase-btn {
      border-radius: 20px;
      width: 100px;
@@ -149,6 +185,12 @@ body {
      text-align: center;
      color: red;
 }
+
+#car-overview-title{
+     text-align: center;
+     margin-bottom: 20px;
+}
+
 @media screen and (max-width: 768px) {
      .car-display img {
      width: 90%;

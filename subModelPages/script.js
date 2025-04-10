@@ -51,6 +51,53 @@ const carImages = {
     }
 };
 
+const carSpecs = {
+    CUV: {
+        horsepower: "200 HP",
+        weight: "1,600 kg",
+        topSpeed: "190 km/h",
+        acceleration: "0–100 km/h in 9.5s",
+        fuelEfficiency: "14 km/l",
+        engineType: "2.0L I4",
+        drivetrain: "AWD",
+        transmission: "6-Speed Automatic",
+        seating: "5"
+    },
+    SUV: {
+        horsepower: "250 HP",
+        weight: "1,800 kg",
+        topSpeed: "210 km/h",
+        acceleration: "0–100 km/h in 8.5s",
+        fuelEfficiency: "12 km/l",
+        engineType: "2.5L V6",
+        drivetrain: "AWD",
+        transmission: "8-Speed Automatic",
+        seating: "7"
+    },
+    SEDAN: {
+        horsepower: "180 HP",
+        weight: "1,400 kg",
+        topSpeed: "200 km/h",
+        acceleration: "0–100 km/h in 8.0s",
+        fuelEfficiency: "16 km/l",
+        engineType: "1.8L I4",
+        drivetrain: "FWD",
+        transmission: "6-Speed Manual",
+        seating: "5"
+    },
+    SUPERCAR: {
+        horsepower: "550 HP",
+        weight: "1,300 kg",
+        topSpeed: "330 km/h",
+        acceleration: "0–100 km/h in 3.2s",
+        fuelEfficiency: "8 km/l",
+        engineType: "4.0L V8 Twin Turbo",
+        drivetrain: "RWD",
+        transmission: "7-Speed Dual-Clutch",
+        seating: "2"
+    }
+};
+
 //Price mapping for Colors
 const colorPrices = {
     "Red": 0,
@@ -75,6 +122,15 @@ const basePrices = {
     "SEDAN": 700000,
     "SUPERCAR": 1000000
 };
+//Call these code to activate each functions:
+paymentMethodDropdown.addEventListener('change', updatePaymentDetails);
+installmentYearsDropdown.addEventListener('change', updatePaymentDetails);
+colorDropdown.addEventListener('change', updatePaymentDetails);
+tireDropdown.addEventListener('change', updatePaymentDetails);
+
+//Automactially Initialize the function upon opening the page:
+updateCarOverview(currentCarModel);
+updateTotalPrice();
 
 //Since we need the dynamic car model name, we will declare the car model as a
 //Global variable using the var keyword. Then we can access that variable from script.js
@@ -93,10 +149,7 @@ tireDropdown.addEventListener('change', () => {
     updateTotalPrice();
 });
 
-paymentMethodDropdown.addEventListener('change', updatePaymentDetails);
-installmentYearsDropdown.addEventListener('change', updatePaymentDetails);
-colorDropdown.addEventListener('change', updatePaymentDetails);
-tireDropdown.addEventListener('change', updatePaymentDetails);
+
 function updateCarImage() {
     const selectedColor = colorDropdown.value;
     if (selectedColor && carImages[currentCarModel][selectedColor]) {
@@ -218,3 +271,19 @@ document.getElementById('purchase-btn').addEventListener('click', () => {
 
     doc.save(`Purchase_${model}_${date_format}.pdf`);
 });
+
+//Car Overview-Details for each car model
+function updateCarOverview(model) {
+    const specs = carSpecs[model];
+    if (specs) {
+        document.getElementById("horsepower").textContent = `Horse Power: ${specs.horsepower}`;
+        document.getElementById("weight").textContent = `Weight: ${specs.weight}`;
+        document.getElementById("top-speed").textContent = `Top Speed: ${specs.topSpeed}`;
+        document.getElementById("acceleration").textContent = `Acceleration: ${specs.acceleration}`;
+        document.getElementById("fuel-efficiency").textContent = `Fuel Efficiency: ${specs.fuelEfficiency}`;
+        document.getElementById("engine-type").textContent = `Engine Type: ${specs.engineType}`;
+        document.getElementById("drivetrain").textContent = `Drivetrain: ${specs.drivetrain}`;
+        document.getElementById("transmission").textContent = `Transmission: ${specs.transmission}`;
+        document.getElementById("seating").textContent = `Seating Capacity: ${specs.seating}`;
+    }
+}
