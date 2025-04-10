@@ -122,6 +122,7 @@ const basePrices = {
     "SEDAN": 700000,
     "SUPERCAR": 1000000
 };
+
 //Call these code to activate each functions:
 paymentMethodDropdown.addEventListener('change', updatePaymentDetails);
 installmentYearsDropdown.addEventListener('change', updatePaymentDetails);
@@ -246,28 +247,40 @@ document.getElementById('purchase-btn').addEventListener('click', () => {
     const second = new Date().getSeconds();
 
     const date_format = `${year}_${month}_${day}_${hour < 10 ? '0' + hour : hour}${minute < 10 ? '0' + minute : minute}${second < 10 ? '0' + second : second}`;
+    
+    doc.setFontSize(38);
+    doc.setTextColor(52, 103, 235); 
+    // doc.setFontStyle('bold');
+    doc.text("C", 140, 20);
+    
+    doc.setFontSize(30);
+    doc.setTextColor(100,100,100);
+    doc.text("ar Website", 150, 20);
+
+    doc.setFontSize(10);
+    doc.text("Company Email: car_dealer@admin.com",136,30);
 
     doc.setFontSize(16);
-    doc.text("Purchase Summary", 20, 20);   
+    doc.text("Purchase Summary", 20, 40);   
 
     doc.setFontSize(12);
-    doc.text(`Date: ${date}`, 20, 30);
-    doc.text(`Car Model: ${model}`, 20, 40);
-    doc.text(`Color: ${color}`, 20, 50);
-    doc.text(`Tire Type: ${tire}`, 20, 60);
-    doc.text(`Total Price: ${price}`, 20, 70);
-    doc.text(`Payment Method: ${method === "installment" ? "Installment" : "One-Time"}`, 20, 80);
+    doc.text(`Date: ${date}`, 20, 70);
+    doc.text(`Car Model: ${model}`, 20, 80);
+    doc.text(`Color: ${color}`, 20, 90);
+    doc.text(`Tire Type: ${tire}`, 20, 100);
+    doc.text(`Total Price: ${price}`, 20, 110);
+    doc.text(`Payment Method: ${method === "installment" ? "Installment" : "One-Time"}`, 20, 120);
 
     if (method === "installment") {
-        doc.text(`Years: ${years}`, 20, 90);
-        doc.text(`Down Payment: ${down}`, 20, 100);
-        doc.text(`Balance After Down Payment: ${balance}`, 20, 110);
-        doc.text(`Total Interest: ${interest}`, 20, 120);
-        doc.text(`Final Payment Amount: ${finalPayment}`, 20, 130);
-        doc.text(`Monthly Payment: ${monthly}`, 20, 140);
+        doc.text(`Period: ${years} years`, 20, 130);
+        doc.text(`Down Payment: ${down}`, 20, 140);
+        doc.text(`Balance After Down Payment: ${balance}`, 20, 150);
+        doc.text(`Total Interest: ${interest}`, 20, 160);
+        doc.text(`Final Payment Amount: ${finalPayment}`, 20, 170);
+        doc.text(`Monthly Payment: ${monthly}`, 20, 180);
     }
 
-    doc.text("Thank you for your purchase!", 20, 160);
+    doc.text("Thank you for your purchase!", 20, 200);
 
     doc.save(`Purchase_${model}_${date_format}.pdf`);
 });
