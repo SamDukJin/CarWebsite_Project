@@ -250,7 +250,6 @@ document.getElementById('purchase-btn').addEventListener('click', () => {
     
     doc.setFontSize(38);
     doc.setTextColor(52, 103, 235); 
-    // doc.setFontStyle('bold');
     doc.text("C", 140, 20);
     
     doc.setFontSize(30);

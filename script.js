@@ -2,10 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const carCards = document.querySelectorAll('.car-card');
     const titleContainer = document.querySelector('.title-container');
 
+    // Add click event listeners to each car card
     carCards.forEach(card => {
         card.addEventListener('click', () => {
+            // Retrieve the car model from the card's data attribute and convert it to lowercase
             const model = card.dataset.model.toLowerCase(); 
-            window.location.href = `subModelPages/${model}.html`; // Redirect to submodel page
+            // Redirect the user to the corresponding submodel page based on the car model
+            window.location.href = `subModelPages/${model}.html`; 
         });
     });
 
