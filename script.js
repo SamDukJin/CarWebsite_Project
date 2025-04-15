@@ -1,3 +1,31 @@
+function createCarCards() {
+    return `
+        ${createCarCard("SEDAN", 700000, "CarModel/CarModel_SEDAN.png", "Sedan")}
+        ${createCarCard("SUV", 500000, "CarModel/CarModel_SUV.png", "SUV")}
+        ${createCarCard("CUV", 600000, "CarModel/CarModel_CUV.png", "CUV")}
+        ${createCarCard("SUPERCAR", 1000000, "CarModel/CarModel_SUPERCAR.png", "Supercar")}
+    `;
+}
+
+function createCarCard(model, price, imageSrc, altText) {
+    return `
+        <div class="car-card" data-model="${model}" data-price="${price}">
+            <img src="${imageSrc}" alt="${altText}">
+            <div class="car-info">
+                <h3>${altText}</h3>
+                <p>Base Price: ${price.toLocaleString()} Baht</p>
+            </div>
+        </div>
+    `;
+}
+
+// If we put the createCarCards in the same DOMContentLoaded, it will not work because the event listeners below haven't been added yet.
+// That's why we have to fetch the data first when site is loaded, then we can continue to other function
+document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById("carCardGrid");
+    grid.innerHTML = createCarCards();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const carCards = document.querySelectorAll('.car-card');
     const titleContainer = document.querySelector('.title-container');
