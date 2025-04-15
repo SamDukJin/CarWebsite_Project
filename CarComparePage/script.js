@@ -1,38 +1,40 @@
 const INTEREST_RATE = 0.035;
 const DOWN_PAYMENT_PERCENTAGE = 0.25;
+// For creating the comparison section container using loops
+const comparisonContainer = document.getElementById("comparison-container");
 
 const carImages = {
      CUV: {
-          Default: '../CarModel/CarModel_CUV_Default.png',
-          Black: '../CarModel/CarModel_CUV_BLACK.png',
-          White: '../CarModel/CarModel_CUV_WHITE.png',
-          Red: '../CarModel/CarModel_CUV_RED.png',
-          Blue: '../CarModel/CarModel_CUV_BLUE.png',
-          Silver: '../CarModel/CarModel_CUV_SILVER.png'
+          Default: '../asset/CarModel/CarModel_CUV_Default.png',
+          Black: '../asset/CarModel/CarModel_CUV_BLACK.png',
+          White: '../asset/CarModel/CarModel_CUV_WHITE.png',
+          Red: '../asset/CarModel/CarModel_CUV_RED.png',
+          Blue: '../asset/CarModel/CarModel_CUV_BLUE.png',
+          Silver: '../asset/CarModel/CarModel_CUV_SILVER.png'
      },
      SUV: {
-          Default: '../CarModel/CarModel_SUV_Default.png',
-          Black: '../CarModel/CarModel_SUV_BLACK.png',
-          White: '../CarModel/CarModel_SUV_WHITE.png',
-          Red: '../CarModel/CarModel_SUV_RED.png',
-          Blue: '../CarModel/CarModel_SUV_BLUE.png',
-          Silver: '../CarModel/CarModel_SUV_SILVER.png'
+          Default: '../asset/CarModel/CarModel_SUV_Default.png',
+          Black: '../asset/CarModel/CarModel_SUV_BLACK.png',
+          White: '../asset/CarModel/CarModel_SUV_WHITE.png',
+          Red: '../asset/CarModel/CarModel_SUV_RED.png',
+          Blue: '../asset/CarModel/CarModel_SUV_BLUE.png',
+          Silver: '../asset/CarModel/CarModel_SUV_SILVER.png'
      },
      SEDAN: {
-          Default: '../CarModel/CarModel_SEDAN_Default.png',
-          Black: '../CarModel/CarModel_SEDAN_BLACK.png',
-          White: '../CarModel/CarModel_SEDAN_WHITE.png',
-          Red: '../CarModel/CarModel_SEDAN_RED.png',
-          Blue: '../CarModel/CarModel_SEDAN_BLUE.png',
-          Silver: '../CarModel/CarModel_SEDAN_SILVER.png'
+          Default: '../asset/CarModel/CarModel_SEDAN_Default.png',
+          Black: '../asset/CarModel/CarModel_SEDAN_BLACK.png',
+          White: '../asset/CarModel/CarModel_SEDAN_WHITE.png',
+          Red: '../asset/CarModel/CarModel_SEDAN_RED.png',
+          Blue: '../asset/CarModel/CarModel_SEDAN_BLUE.png',
+          Silver: '../asset/CarModel/CarModel_SEDAN_SILVER.png'
      },
      SUPERCAR: {
-          Default: '../CarModel/CarModel_SUPERCAR_Default.png',
-          Black: '../CarModel/CarModel_SUPERCAR_BLACK.png',
-          White: '../CarModel/CarModel_SUPERCAR_WHITE.png',
-          Red: '../CarModel/CarModel_SUPERCAR_RED.png',
-          Blue: '../CarModel/CarModel_SUPERCAR_BLUE.png',
-          Silver: '../CarModel/CarModel_SUPERCAR_SILVER.png'
+          Default: '../asset/CarModel/CarModel_SUPERCAR_Default.png',
+          Black: '../asset/CarModel/CarModel_SUPERCAR_BLACK.png',
+          White: '../asset/CarModel/CarModel_SUPERCAR_WHITE.png',
+          Red: '../asset/CarModel/CarModel_SUPERCAR_RED.png',
+          Blue: '../asset/CarModel/CarModel_SUPERCAR_BLUE.png',
+          Silver: '../asset/CarModel/CarModel_SUPERCAR_SILVER.png'
      }
 };
 
@@ -105,6 +107,11 @@ const basePrices = {
      SUPERCAR: 1000000
 };
 
+// To create the containers
+for (let i = 1; i <= 3; i++) {
+     comparisonContainer.insertAdjacentHTML("beforeend", createCarInfo(i));
+}
+
 // When the site is loaded, it will update the car sections
 document.addEventListener('DOMContentLoaded', () => {
      ['1', '2', '3'].forEach(num => {
@@ -171,4 +178,64 @@ function updateImage(model, color, num) {
      if (imageTag && imagePath) {
           imageTag.src = imagePath;
      }
+}
+
+// Create each car section with loops, so we don't have to repeat the code in HTML
+function createCarInfo(i){
+     return `
+     <section class="car-column" id="car${i}">
+          <h2>Car ${i}</h2>
+          <div class="car-selector">
+               <label>Model:</label>
+               <select class="model-select" id="model${i}">
+                    <option value="">-- Select Model --</option>
+                    <option value="SEDAN">Sedan Base Price: 700,000 Baht</option>
+                    <option value="SUV">SUV Base Price: 500,000 Baht</option>
+                    <option value="CUV">CUV Base Price: 600,000 Baht</option>
+                    <option value="SUPERCAR">Supercar Base Price: 1,000,000 Baht</option>
+               </select>
+          </div>
+          <div class="customization" id="customization${i}">
+               <label>Color:</label>
+               <select class="color-select" id="color${i}">
+                    <option value="Default">-- Select Car Color --</option>
+                    <option value="Black">Black +0 Baht</option>
+                    <option value="White">White +0 Baht</option>
+                    <option value="Red">Red +0 Baht</option>
+                    <option value="Blue">Blue +10,000 Baht</option>
+                    <option value="Silver">Silver +50,000 Baht</option>
+               </select>
+               <label>Tires:</label>
+               <select class="tire-select" id="tire${i}">
+                    <option value="">-- Select Tire Type --</option>
+                    <option value="All-Season">All-Season +5,000 Baht</option>
+                    <option value="Winter">Winter +20,000 Baht</option>
+                    <option value="Performance">Performance +10,000 Baht</option>
+                    <option value="Off-Road">Off-Road +40,000 Baht</option>
+               </select>
+          </div>
+               ${createOverviewHTML(i)} <!-- For putting the car overview below the car main section-->
+          <div class="car-preview" id="preview${i}">
+               <img src="../asset/placeholder.png" alt="Car ${i} Preview">
+               <p class="price">Total: $0</p>
+          </div>
+     </section>
+     `
+};
+// Creating the Overview under the container
+function createOverviewHTML(i) {
+     return `
+     <div class="car-overview" id="overview${i}">
+          <h3>Car Overview</h3>
+          <p id="horsepower${i}">Horse Power: -</p>
+          <p id="weight${i}">Weight: -</p>
+          <p id="top-speed${i}">Top Speed: -</p>
+          <p id="acceleration${i}">Acceleration: -</p>
+          <p id="fuel-efficiency${i}">Fuel Efficiency: -</p>
+          <p id="engine-type${i}">Engine Type: -</p>
+          <p id="drivetrain${i}">Drivetrain: -</p>
+          <p id="transmission${i}">Transmission: -</p>
+          <p id="seating${i}">Seating Capacity: -</p>
+     </div>
+     `;
 }
