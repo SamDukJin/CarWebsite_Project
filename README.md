@@ -64,3 +64,7 @@ A modern, interactive web application for customizing, previewing, and purchasin
 Made By Thanaphat Ch.
 
 ---
+
+## License
+![Static Badge](https://img.shields.io/badge/License-MIT-Green)
+
