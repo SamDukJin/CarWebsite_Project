@@ -1,9 +1,9 @@
 function createCarCards() {
     return `
-        ${createCarCard("SEDAN", 700000, "CarModel/CarModel_SEDAN.png", "Sedan")}
-        ${createCarCard("SUV", 500000, "CarModel/CarModel_SUV.png", "SUV")}
-        ${createCarCard("CUV", 600000, "CarModel/CarModel_CUV.png", "CUV")}
-        ${createCarCard("SUPERCAR", 1000000, "CarModel/CarModel_SUPERCAR.png", "Supercar")}
+        ${createCarCard("SEDAN", 700000, "asset/CarModel/CarModel_SEDAN.png", "Sedan")}
+        ${createCarCard("SUV", 500000, "asset/CarModel/CarModel_SUV.png", "SUV")}
+        ${createCarCard("CUV", 600000, "asset/CarModel/CarModel_CUV.png", "CUV")}
+        ${createCarCard("SUPERCAR", 1000000, "asset/CarModel/CarModel_SUPERCAR.png", "Supercar")}
     `;
 }
 
