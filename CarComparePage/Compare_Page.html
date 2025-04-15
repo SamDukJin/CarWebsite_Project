@@ -1,173 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Car Comparison</title>
-  <link rel="stylesheet" href="style.css">
+     <meta charset="UTF-8">
+     <title>Car Comparison</title>
+     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-     <header class="title-container">
-     <h1>Compare Your Dream Cars</h1>
-     </header>
+     <div class="page-header">
+     <h1>Car Comparison Page</h1>
+     <a href="../index.html" class="back-button">← Back to Home</a>
+     </div>
 
-     <main class="comparison-container">
-
-     <!-- Car 1 -->
-     <section class="car-column" id="car1">
-          <h2>Car 1</h2>
-          <div class="car-selector">
-          <label>Model:</label>
-          <select class="model-select" id="model1">
-               <option value="">-- Select Model --</option>
-               <option value="SEDAN">Sedan</option>
-               <option value="SUV">SUV</option>
-               <option value="CUV">CUV</option>
-               <option value="SUPERCAR">Supercar</option>
-          </select>
-          </div>
-          <div class="customization" id="customization1">
-          <label>Color:</label>
-          <select class="color-select" id="color1">
-               <option value="">-- Select Car Color --</option>
-               <option value="Black">Black +0 Baht</option>
-               <option value="White">White +0 Baht</option>
-               <option value="Red">Red +0 Baht</option>
-               <option value="Blue">Blue +10,000 Baht</option>
-               <option value="Silver">Silver + 50,000 Baht</option>
-          </select>
-          <label>Tires:</label>
-          <select class="tire-select" id="tire1">
-               <option value="">-- Select Tire Type --</option>
-               <option value="All-Season">All-Season +5,000 Baht</option>
-               <option value="Winter">Winter  +20,000 Baht</option>
-               <option value="Performance">Performance  +10,000 Baht</option>
-               <option value="Off-Road">Off-Road  +40,000 Baht</option>
-          </select>
-          </div>
-          <div class="car-preview" id="preview1">
-          <img src="placeholder.jpg" alt="Car 1 Preview">
-          <p class="price">Total: $0</p>
-          </div>
-     </section>
-
-     <!-- Car 2 -->
-     <section class="car-column" id="car2">
-          <h2>Car 2</h2>
-          <div class="car-selector">
-          <label>Model:</label>
-          <select class="model-select" id="model2">
-               <option value="">-- Select Model --</option>
-               <option value="SEDAN">Sedan</option>
-               <option value="SUV">SUV</option>
-               <option value="CUV">CUV</option>
-               <option value="SUPERCAR">Supercar</option>
-          </select>
-          </div>
-          <div class="customization" id="customization2">
-          <label>Color:</label>
-          <select class="color-select" id="color2">
-               <option value="">-- Select Car Color --</option>
-               <option value="Black">Black +0 Baht</option>
-               <option value="White">White +0 Baht</option>
-               <option value="Red">Red +0 Baht</option>
-               <option value="Blue">Blue +10,000 Baht</option>
-               <option value="Silver">Silver + 50,000 Baht</option>
-          </select>
-          <label>Tires:</label>
-          <select class="tire-select" id="tire2">
-               <option value="">-- Select Tire Type --</option>
-               <option value="All-Season">All-Season +5,000 Baht</option>
-               <option value="Winter">Winter  +20,000 Baht</option>
-               <option value="Performance">Performance  +10,000 Baht</option>
-               <option value="Off-Road">Off-Road  +40,000 Baht</option>
-          </select>
-          </div>
-          <div class="car-preview" id="preview2">
-          <img src="placeholder.jpg" alt="Car 2 Preview">
-          <p class="price">Total: $0</p>
-          </div>
-     </section>
-
-     <!-- Car 3 -->
-     <section class="car-column" id="car3">
-          <h2>Car 3</h2>
-          <div class="car-selector">
-          <label>Model:</label>
-          <select class="model-select" id="model3">
-               <option value="">-- Select Model --</option>
-               <option value="SEDAN">Sedan</option>
-               <option value="SUV">SUV</option>
-               <option value="CUV">CUV</option>
-               <option value="SUPERCAR">Supercar</option>
-          </select>
-          </div>
-          <div class="customization" id="customization3">
-          <label>Color:</label>
-          <select class="color-select" id="color3">
-               <option value="">-- Select Car Color --</option>
-               <option value="Black">Black +0 Baht</option>
-               <option value="White">White +0 Baht</option>
-               <option value="Red">Red +0 Baht</option>
-               <option value="Blue">Blue +10,000 Baht</option>
-               <option value="Silver">Silver + 50,000 Baht</option>
-          </select>
-          <label>Tires:</label>
-          <select class="tire-select" id="tire3">
-               <option value="">-- Select Tire Type --</option>
-               <option value="All-Season">All-Season +5,000 Baht</option>
-               <option value="Winter">Winter  +20,000 Baht</option>
-               <option value="Performance">Performance  +10,000 Baht</option>
-               <option value="Off-Road">Off-Road  +40,000 Baht</option>
-          </select>
-          </div>
-          <div class="car-preview" id="preview3">
-          <img src="placeholder.jpg" alt="Car 3 Preview">
-          <p class="price">Total: $0</p>
-          </div>
-     </section>
-
+     <main class="comparison-container" id="comparison-container">
+           <!--This will be left out to render the content inside the script-->
      </main>
-
      <section class="comparison-summary">
-     <h2>Summary</h2>
-     <table>
-          <thead>
-          <tr>
-               <th>Feature</th>
-               <th>Car 1</th>
-               <th>Car 2</th>
-               <th>Car 3</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-               <td>Model</td>
-               <td id="summary-model1">-</td>
-               <td id="summary-model2">-</td>
-               <td id="summary-model3">-</td>
-          </tr>
-          <tr>
-               <td>Color</td>
-               <td id="summary-color1">-</td>
-               <td id="summary-color2">-</td>
-               <td id="summary-color3">-</td>
-          </tr>
-          <tr>
-               <td>Tires</td>
-               <td id="summary-tires1">-</td>
-               <td id="summary-tires2">-</td>
-               <td id="summary-tires3">-</td>
-          </tr>
-          <tr>
-               <td>Total Price</td>
-               <td id="summary-price1">$0</td>
-               <td id="summary-price2">$0</td>
-               <td id="summary-price3">$0</td>
-          </tr>
-          </tbody>
-     </table>
+          <h2>Summary</h2>
+          <table>
+               <thead>
+                    <tr>
+                         <th>Feature</th>
+                         <th>Car 1</th>
+                         <th>Car 2</th>
+                         <th>Car 3</th>
+                    </tr>
+               </thead>
+               <tbody>
+                    <tr>
+                         <td>Model</td>
+                         <td id="summary-model1">-</td>
+                         <td id="summary-model2">-</td>
+                         <td id="summary-model3">-</td>
+                    </tr>
+                    <tr>
+                         <td>Color</td>
+                         <td id="summary-color1">-</td>
+                         <td id="summary-color2">-</td>
+                         <td id="summary-color3">-</td>
+                    </tr>
+                    <tr>
+                         <td>Tires</td>
+                         <td id="summary-tires1">-</td>
+                         <td id="summary-tires2">-</td>
+                         <td id="summary-tires3">-</td>
+                    </tr>
+                    <tr>
+                         <td>Total Price</td>
+                         <td id="summary-price1">$0</td>
+                         <td id="summary-price2">$0</td>
+                         <td id="summary-price3">$0</td>
+                    </tr>
+               </tbody>
+          </table>
      </section>
+
+     <div class="purchase-section">
+          <h3>Select the car you like!</h3>
+     </div>
+
+     <script>
+     function createOverviewHTML(i) {
+          return `
+          <div class="car-overview" id="overview${i}">
+               <h3>Car Overview</h3>
+               <p id="horsepower${i}">Horse Power: -</p>
+               <p id="weight${i}">Weight: -</p>
+               <p id="top-speed${i}">Top Speed: -</p>
+               <p id="acceleration${i}">Acceleration: -</p>
+               <p id="fuel-efficiency${i}">Fuel Efficiency: -</p>
+               <p id="engine-type${i}">Engine Type: -</p>
+               <p id="drivetrain${i}">Drivetrain: -</p>
+               <p id="transmission${i}">Transmission: -</p>
+               <p id="seating${i}">Seating Capacity: -</p>
+          </div>
+          `;
+     }
+
+     function createCarInfo(i){
+          return `
+          <section class="car-column" id="car${i}">
+               <h2>Car ${i}</h2>
+               <div class="car-selector">
+                    <label>Model:</label>
+                    <select class="model-select" id="model${i}">
+                         <option value="">-- Select Model --</option>
+                         <option value="SEDAN">Sedan Base Price: 700,000 Baht</option>
+                         <option value="SUV">SUV Base Price: 500,000 Baht</option>
+                         <option value="CUV">CUV Base Price: 600,000 Baht</option>
+                         <option value="SUPERCAR">Supercar Base Price: 1,000,000 Baht</option>
+                    </select>
+               </div>
+               <div class="customization" id="customization${i}">
+                    <label>Color:</label>
+                    <select class="color-select" id="color${i}">
+                         <option value="Default">-- Select Car Color --</option>
+                         <option value="Black">Black +0 Baht</option>
+                         <option value="White">White +0 Baht</option>
+                         <option value="Red">Red +0 Baht</option>
+                         <option value="Blue">Blue +10,000 Baht</option>
+                         <option value="Silver">Silver +50,000 Baht</option>
+                    </select>
+                    <label>Tires:</label>
+                    <select class="tire-select" id="tire${i}">
+                         <option value="">-- Select Tire Type --</option>
+                         <option value="All-Season">All-Season +5,000 Baht</option>
+                         <option value="Winter">Winter +20,000 Baht</option>
+                         <option value="Performance">Performance +10,000 Baht</option>
+                         <option value="Off-Road">Off-Road +40,000 Baht</option>
+                    </select>
+               </div>
+                    ${createOverviewHTML(i)} <!-- For putting the car overview below the car main section-->
+               <div class="car-preview" id="preview${i}">
+                    <img src="../asset/placeholder.png" alt="Car ${i} Preview">
+                    <p class="price">Total: $0</p>
+               </div>
+          </section>
+          `
+     };
+
+     const comparisonContainer = document.getElementById("comparison-container");
+
+     for (let i = 1; i <= 3; i++) {
+          comparisonContainer.insertAdjacentHTML("beforeend", createCarInfo(i));
+     }
+     </script>
 
      <script src="script.js"></script>
 </body>
