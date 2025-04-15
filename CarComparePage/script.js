@@ -105,6 +105,7 @@ const basePrices = {
      SUPERCAR: 1000000
 };
 
+// When the site is loaded, it will update the car sections
 document.addEventListener('DOMContentLoaded', () => {
      ['1', '2', '3'].forEach(num => {
           ['model', 'color', 'tire'].forEach(type => {
@@ -117,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
      });
 });
 
+// Function to update the car section
 function updateCarSection(num) {
      const model = document.getElementById(`model${num}`).value;
      const color = document.getElementById(`color${num}`).value;
@@ -128,6 +130,7 @@ function updateCarSection(num) {
      updatePrice(model, color, tire, num);
 }
 
+// Update the car specs for whenever the model is changed
 function updateSpecs(model, num) {
      const specs = carSpecs[model];
      if (!specs) return;
@@ -143,12 +146,14 @@ function updateSpecs(model, num) {
      document.getElementById(`seating${num}`).textContent = `Seating Capacity: ${specs.seating}`;
 }
 
+// Summary for each type of the selection
 function updateSummary(model, color, tire, num) {
      document.getElementById(`summary-model${num}`).textContent = model || '-';
      document.getElementById(`summary-color${num}`).textContent = color || '-';
      document.getElementById(`summary-tires${num}`).textContent = tire || '-';
 }
 
+// When the model, color, and tire is selected, it will update the price
 function updatePrice(model, color, tire, num) {
      let totalPrice = 0;
      if (model) totalPrice += basePrices[model] || 0;
@@ -159,6 +164,7 @@ function updatePrice(model, color, tire, num) {
      document.getElementById(`summary-price${num}`).textContent = `${totalPrice.toLocaleString()} Baht`;
 }
 
+// Update the image by key in the image path as below
 function updateImage(model, color, num) {
      const imagePath = carImages?.[model]?.[color] || carImages?.[model]?.Default;
      const imageTag = document.querySelector(`#preview${num} img`);
