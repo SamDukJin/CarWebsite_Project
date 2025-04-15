@@ -21,33 +21,37 @@ const DOWN_PAYMENT_PERCENTAGE = 0.25;
 
 //Map the carImages as the key and the image path as the value
 const carImages = {
-    "CUV": {
-        'Black': 'CarModel/CarModel_CUV_BLACK.png',
-        'White': 'CarModel/CarModel_CUV_WHITE.png',
-        'Red': 'CarModel/CarModel_CUV_RED.png',
-        'Blue': 'CarModel/CarModel_CUV_BLUE.png',
-        'Silver': 'CarModel/CarModel_CUV_SILVER.png'
+    CUV: {
+        Default: '../CarModel/CarModel_CUV_Default.png',
+        Black: '../CarModel/CarModel_CUV_BLACK.png',
+        White: '../CarModel/CarModel_CUV_WHITE.png',
+        Red: '../CarModel/CarModel_CUV_RED.png',
+        Blue: '../CarModel/CarModel_CUV_BLUE.png',
+        Silver: '../CarModel/CarModel_CUV_SILVER.png'
     },
-    "SUV": {
-        'Black': 'CarModel/CarModel_SUV_Black.png',
-        'White': 'CarModel/CarModel_SUV_White.png',
-        'Red': 'CarModel/CarModel_SUV_Red.png',
-        'Blue': 'CarModel/CarModel_SUV_Blue.png',
-        'Silver': 'CarModel/CarModel_SUV_Silver.png'
+    SUV: {
+        Default: '../CarModel/CarModel_SUV_Default.png',
+        Black: '../CarModel/CarModel_SUV_BLACK.png',
+        White: '../CarModel/CarModel_SUV_WHITE.png',
+        Red: '../CarModel/CarModel_SUV_RED.png',
+        Blue: '../CarModel/CarModel_SUV_BLUE.png',
+        Silver: '../CarModel/CarModel_SUV_SILVER.png'
     },
-    "SEDAN": {
-        'Black': 'CarModel/CarModel_SEDAN_Black.png',
-        'White': 'CarModel/CarModel_SEDAN_White.png',
-        'Red': 'CarModel/CarModel_SEDAN_Red.png',
-        'Blue': 'CarModel/CarModel_SEDAN_Blue.png',
-        'Silver': 'CarModel/CarModel_SEDAN_Silver.png'
+    SEDAN: {
+        Default: '../CarModel/CarModel_SEDAN_Default.png',
+        Black: '../CarModel/CarModel_SEDAN_BLACK.png',
+        White: '../CarModel/CarModel_SEDAN_WHITE.png',
+        Red: '../CarModel/CarModel_SEDAN_RED.png',
+        Blue: '../CarModel/CarModel_SEDAN_BLUE.png',
+        Silver: '../CarModel/CarModel_SEDAN_SILVER.png'
     },
-    "SUPERCAR": {
-        'Black': 'CarModel/CarModel_SUPERCAR_Black.png',
-        'White': 'CarModel/CarModel_SUPERCAR_White.png',
-        'Red': 'CarModel/CarModel_SUPERCAR_Red.png',
-        'Blue': 'CarModel/CarModel_SUPERCAR_Blue.png',
-        'Silver': 'CarModel/CarModel_SUPERCAR_Silver.png'
+    SUPERCAR: {
+        Default: '../CarModel/CarModel_SUPERCAR_Default.png',
+        Black: '../CarModel/CarModel_SUPERCAR_BLACK.png',
+        White: '../CarModel/CarModel_SUPERCAR_WHITE.png',
+        Red: '../CarModel/CarModel_SUPERCAR_RED.png',
+        Blue: '../CarModel/CarModel_SUPERCAR_BLUE.png',
+        Silver: '../CarModel/CarModel_SUPERCAR_SILVER.png'
     }
 };
 
