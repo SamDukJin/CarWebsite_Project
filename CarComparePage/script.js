@@ -2,6 +2,7 @@ const INTEREST_RATE = 0.035;
 const DOWN_PAYMENT_PERCENTAGE = 0.25;
 // For creating the comparison section container using loops
 const comparisonContainer = document.getElementById("comparison-container");
+const purchaseBtn = document.getElementById("purchase-button");
 
 const carImages = {
      CUV: {
@@ -112,6 +113,34 @@ for (let i = 1; i <= 3; i++) {
      comparisonContainer.insertAdjacentHTML("beforeend", createCarInfo(i));
 }
 
+purchaseBtn.addEventListener('click', ()=>{
+     const choiceNum = document.getElementById('purchase-choice').value;
+     const model = document.getElementById(`model${choiceNum}`)?.value;
+     const color = document.getElementById(`color${choiceNum}`)?.value;
+     const tire = document.getElementById(`tire${choiceNum}`)?.value;
+     
+     if (!model|| !color || !tire){
+          alert("Please ensure that all the field are selected.")
+          return;
+     }
+
+     const ModelPageMap = {
+          SUPERCAR: 'supercar.html',
+          SUV: 'suv.html',
+          CUV: 'cuv.html',
+          SEDAN: 'sedan.html'
+     }
+
+     const page = ModelPageMap[model];
+     if (!page) {
+          alert("Unknown car model selected.")
+          return;
+     }
+
+     const url = `../subModelPages/${page}?color=${encodeURIComponent(color)}&tire=${encodeURIComponent(tire)}`;
+     window.location.href = url;
+})
+
 // When the site is loaded, it will update the car sections
 document.addEventListener('DOMContentLoaded', () => {
      ['1', '2', '3'].forEach(num => {
@@ -124,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
           updateCarSection(num); // Initial update
      });
 });
+
 
 // Function to update the car section
 function updateCarSection(num) {

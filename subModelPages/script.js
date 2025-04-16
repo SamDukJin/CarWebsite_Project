@@ -14,6 +14,7 @@ const balanceDisplay = document.getElementById('balance-payment');
 const interestDisplay = document.getElementById('total-interest');
 const finalPaymentDisplay = document.getElementById('final-payment');
 const monthlyPaymentDisplay = document.getElementById('monthly-payment');
+const purchasebutton = document.getElementById('purchase-btn');
 
 const ErrorHandleDisplay = document.getElementById('error-handle');
 const INTEREST_RATE = 0.035;
@@ -127,6 +128,24 @@ const basePrices = {
     "SUPERCAR": 1000000
 };
 
+window.addEventListener('DOMContentLoaded', ()=>{
+    const params = new URLSearchParams(window.location.search);
+    const color = params.get('color');
+    const tire = params.get('tire');
+
+    if (color) {
+        document.getElementById('CarColor').value = color
+        UpdateColorSelect();
+    };
+    if (tire) {
+        document.getElementById('TireType').value = tire
+        UpdateTireSelect();
+    };
+
+    updateCarSection();
+    updateTotalPrice();
+})
+
 //Call these code to activate each functions:
 paymentMethodDropdown.addEventListener('change', updatePaymentDetails);
 installmentYearsDropdown.addEventListener('change', updatePaymentDetails);
@@ -137,87 +156,16 @@ tireDropdown.addEventListener('change', updatePaymentDetails);
 updateCarOverview(currentCarModel);
 updateTotalPrice();
 
-//Since we need the dynamic car model name, we will declare the car model as a
-//Global variable using the var keyword. Then we can access that variable from script.js
-
 //Update the car image based on the selected color
 colorDropdown.addEventListener('change', () => {
-    const selectedColor = colorDropdown.value;
-    colorDisplay.textContent = `Color: ${selectedColor || '-'}`;
-    updateCarImage();
-    updateTotalPrice(); 
+    UpdateColorSelect();
 });
 
 tireDropdown.addEventListener('change', () => {
-    const selectedTire = tireDropdown.value;
-    tireDisplay.textContent = `Tire Type: ${selectedTire || '-'}`;
-    updateTotalPrice();
+    UpdateTireSelect();
 });
 
-
-function updateCarImage() {
-    const selectedColor = colorDropdown.value;
-    if (selectedColor && carImages[currentCarModel][selectedColor]) {
-        const imagePath = carImages[currentCarModel][selectedColor];
-        carImage.src = imagePath;
-
-        carImage.onerror = () => {
-            console.log(`Image not found: ${imagePath}`);
-            carImage.src = `../asset/CarModel/CarModel_${currentCarModel}_Default.png`;
-        };
-    } else {
-        carImage.src = `../asset/CarModel/CarModel_${currentCarModel}_Default.png`;
-    }
-}
-
-function updateTotalPrice(){
-    const selectedColor = colorDropdown.value;
-    const selectedTire = tireDropdown.value;
-
-    const basePrice = basePrices[currentCarModel] || 0;
-    const colorPrice = colorPrices[selectedColor] || 0;
-    const tirePrice = tirePrices[selectedTire] || 0;
-
-    const totalPrice = basePrice + colorPrice + tirePrice;
-
-    totalPriceDisplay.textContent = `Total Price: ${totalPrice.toLocaleString()} Baht`;
-
-    return totalPrice;
-}
-
-function updatePaymentDetails(){
-    const total = updateTotalPrice();
-    const method = paymentMethodDropdown.value;
-
-    downPaymentDisplay.textContent = "Down Payment: -";
-    balanceDisplay.textContent = "Balance (after down payment): -";
-    interestDisplay.textContent = "Total Interest: -";
-    finalPaymentDisplay.textContent = "Final Balance Payment: -";
-    monthlyPaymentDisplay.textContent = "Monthly Payment: -";
-
-    if (method === "onetime"){
-        installmentOptionsDiv.style.display="none";
-    }else if (method === "installment"){
-        installmentOptionsDiv.style.display="block";
-        const years = parseInt(installmentYearsDropdown.value || "5");
-
-        const downPayment = total * DOWN_PAYMENT_PERCENTAGE;
-        const balance = total - downPayment;
-        const totalInterest = balance * INTEREST_RATE * years;
-        const finalPayment = balance + totalInterest;
-        const monthly = finalPayment / (years * 12);
-
-        downPaymentDisplay.textContent = `Down Payment: ${downPayment.toLocaleString()} Baht`;
-        balanceDisplay.textContent = `Balance (after down payment): ${balance.toLocaleString()} Baht`;
-        interestDisplay.textContent = `Total Interest: ${totalInterest.toLocaleString(undefined, {maximumFractionDigits: 0})} Baht`;
-        finalPaymentDisplay.textContent = `Final Balance Payment: ${finalPayment.toLocaleString()} Baht`;
-        monthlyPaymentDisplay.textContent = `Monthly Payment: ${monthly.toLocaleString(undefined, {maximumFractionDigits: 0})} Baht`;
-    } else {
-        installmentOptionsDiv.style.display = "none";
-    } 
-}
-
-document.getElementById('purchase-btn').addEventListener('click', () => {
+purchasebutton.addEventListener('click', () => {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
@@ -288,6 +236,84 @@ document.getElementById('purchase-btn').addEventListener('click', () => {
     doc.save(`Purchase_${model}_${date_format}.pdf`);
 });
 
+
+//Since we need the dynamic car model name, we will declare the car model as a
+//Global variable using the var keyword. Then we can access that variable from script.js
+function updateCarImage() {
+    const selectedColor = colorDropdown.value;
+    if (selectedColor && carImages[currentCarModel][selectedColor]) {
+        const imagePath = carImages[currentCarModel][selectedColor];
+        carImage.src = imagePath;
+
+        carImage.onerror = () => {
+            console.log(`Image not found: ${imagePath}`);
+            carImage.src = `../asset/CarModel/CarModel_${currentCarModel}_Default.png`;
+        };
+    } else {
+        carImage.src = `../asset/CarModel/CarModel_${currentCarModel}_Default.png`;
+    }
+}
+
+function UpdateColorSelect(){
+    const selectedColor = colorDropdown.value;
+    colorDisplay.textContent = `Color: ${selectedColor || '-'}`;
+    updateCarImage();
+    updateTotalPrice();
+}
+
+function UpdateTireSelect(){
+    const selectedTire = tireDropdown.value;
+    tireDisplay.textContent = `Tire Type: ${selectedTire || '-'}`;
+    updateTotalPrice();
+}
+
+function updateTotalPrice(){
+    const selectedColor = colorDropdown.value;
+    const selectedTire = tireDropdown.value;
+
+    const basePrice = basePrices[currentCarModel] || 0;
+    const colorPrice = colorPrices[selectedColor] || 0;
+    const tirePrice = tirePrices[selectedTire] || 0;
+
+    const totalPrice = basePrice + colorPrice + tirePrice;
+
+    totalPriceDisplay.textContent = `Total Price: ${totalPrice.toLocaleString()} Baht`;
+
+    return totalPrice;
+}
+
+function updatePaymentDetails(){
+    const total = updateTotalPrice();
+    const method = paymentMethodDropdown.value;
+
+    downPaymentDisplay.textContent = "Down Payment: -";
+    balanceDisplay.textContent = "Balance (after down payment): -";
+    interestDisplay.textContent = "Total Interest: -";
+    finalPaymentDisplay.textContent = "Final Balance Payment: -";
+    monthlyPaymentDisplay.textContent = "Monthly Payment: -";
+
+    if (method === "onetime"){
+        installmentOptionsDiv.style.display="none";
+    }else if (method === "installment"){
+        installmentOptionsDiv.style.display="block";
+        const years = parseInt(installmentYearsDropdown.value || "5");
+
+        const downPayment = total * DOWN_PAYMENT_PERCENTAGE;
+        const balance = total - downPayment;
+        const totalInterest = balance * INTEREST_RATE * years;
+        const finalPayment = balance + totalInterest;
+        const monthly = finalPayment / (years * 12);
+
+        downPaymentDisplay.textContent = `Down Payment: ${downPayment.toLocaleString()} Baht`;
+        balanceDisplay.textContent = `Balance (after down payment): ${balance.toLocaleString()} Baht`;
+        interestDisplay.textContent = `Total Interest: ${totalInterest.toLocaleString(undefined, {maximumFractionDigits: 0})} Baht`;
+        finalPaymentDisplay.textContent = `Final Balance Payment: ${finalPayment.toLocaleString()} Baht`;
+        monthlyPaymentDisplay.textContent = `Monthly Payment: ${monthly.toLocaleString(undefined, {maximumFractionDigits: 0})} Baht`;
+    } else {
+        installmentOptionsDiv.style.display = "none";
+    } 
+}
+
 //Car Overview-Details for each car model
 function updateCarOverview(model) {
     const specs = carSpecs[model];
@@ -303,3 +329,4 @@ function updateCarOverview(model) {
         document.getElementById("seating").textContent = `Seating Capacity: ${specs.seating}`;
     }
 }
+
