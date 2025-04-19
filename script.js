@@ -1,9 +1,9 @@
 function createCarCards() {
     return `
-        ${createCarCard("SEDAN", 700000, "asset/CarModel/CarModel_SEDAN.png", "Sedan")}
-        ${createCarCard("SUV", 500000, "asset/CarModel/CarModel_SUV.png", "SUV")}
-        ${createCarCard("CUV", 600000, "asset/CarModel/CarModel_CUV.png", "CUV")}
-        ${createCarCard("SUPERCAR", 1000000, "asset/CarModel/CarModel_SUPERCAR.png", "Supercar")}
+        ${createCarCard("SEDAN", 700000, "asset/CarModel/CarModel_SEDAN_Default.png", "Sedan")}
+        ${createCarCard("SUV", 500000, "asset/CarModel/CarModel_SUV_Default.png", "SUV")}
+        ${createCarCard("CUV", 600000, "asset/CarModel/CarModel_CUV_Default.png", "CUV")}
+        ${createCarCard("SUPERCAR", 1000000, "asset/CarModel/CarModel_SUPERCAR_Default.png", "Supercar")}
     `;
 }
 
@@ -12,7 +12,6 @@ function createCarCard(model, price, imageSrc, altText) {
         <div class="car-card" data-model="${model}" data-price="${price}">
             <img src="${imageSrc}" alt="${altText}">
             <div class="car-info">
-                <h3>${altText}</h3>
                 <p>Base Price: ${price.toLocaleString()} Baht</p>
             </div>
         </div>

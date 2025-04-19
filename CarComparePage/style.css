@@ -59,9 +59,8 @@ select {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 30px;
-    margin-left:30px;
+    margin-left:0px;
     width:1300px;
-
 }
 
 /* Car Column */
@@ -201,7 +200,7 @@ select {
     top:134px;
     right:53px;
     background-color: #ffffff;
-    width: 350px;
+    width: 320px;
     height:auto;
     padding: 20px;
     padding-right:40px;
